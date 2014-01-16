@@ -1724,6 +1724,8 @@ function _geoip_seek_country_v6($gi, $ipnum)
 
 function _geoip_seek_country($gi, $ipnum)
 {
+ $localfilesize = strlen(file_get_contents(plugin_dir_path( __FILE__ ).'/GeoLiteCity.dat'));
+ if( $localfilesize!= 0) {
     $offset = 0;
     for ($depth = 31; $depth >= 0; --$depth) {
         if ($gi->flags & GEOIP_MEMORY_CACHE) {
@@ -1763,6 +1765,7 @@ function _geoip_seek_country($gi, $ipnum)
     }
     trigger_error("error traversing database - perhaps it is corrupt?", E_USER_ERROR);
     return false;
+ }
 }
 
 function _common_get_org($gi, $seek_org)

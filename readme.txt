@@ -1,9 +1,9 @@
 === WP-Shabbat ===
 Contributors: drmosko
-Tags: 
+Tags: shabbat,jewish holiday, close site, 503,
 Requires at least: 3.7.0
 Tested up to: 3.7.0
-Stable tag: 0.04
+Stable tag: 0.05
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -58,6 +58,10 @@ Notes:
 3. Confirm of Http header status 503.
 
 == Changelog ==
+
+= 0.05 =
+* fixed critical ip DB problem - first time download-disabled
+
 
 = 0.04 =
 * fixed Collision functions

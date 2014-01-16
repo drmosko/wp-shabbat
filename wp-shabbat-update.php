@@ -14,33 +14,15 @@ $lastfiletime = filectime(plugin_dir_path( __FILE__ ).'/GeoLiteCity.dat');
 
 // check if month past from last update
 if ( $nextUpdate <  current_time(timestamp) ){
-
+		
 		$upload_dir = wp_upload_dir();
 		$remotefilesize = strlen(file_get_contents('http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz'));
 		
-		// Use wp_remote_get to fetch the data
-		$response = wp_remote_get('http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz')  ;
-
-		// Save the body part to a variable
-		$fileContent = $response['body'];
-
-
-		// Create the name of the file and the declare the directory and path
-		$file = $upload_dir['path'].'/GeoLiteCity.dat.gz';
-
-		// Now use the standard PHP file functions
-		$fp = fopen($file, "w");
-		fwrite($fp, $fileContent);
-		fclose($fp);
-		
+		$file = download_url('http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz');
 		$localfilesize = strlen(file_get_contents($file));
-		
-		
-		
 		
 		if ( $localfilesize == $remotefilesize) {
 			// get contents of a gz-file into a string
-			
 			$sfp = gzopen($file, "rb");
 			$fp = fopen(plugin_dir_path( __FILE__ ).'/GeoLiteCity.dat', "w");
 
@@ -62,26 +44,26 @@ if ( $nextUpdate <  current_time(timestamp) ){
 		{
 		 $updatestatus = 'problem with gzip file download';
 		}
-		
-		// delete the gz file
-		unlink($file);
-		
-		
-		if ( ($options['lastUpdate'] == 0 ) ){ // check if first time update
+	
+	// delete the gz file
+	unlink($file);
+	
+	// check if first time update
+	if ( ($options['lastUpdate'] == 0 ) ){ 
 			$today = getdate(current_time(timestamp)); 
 			$first_day = getdate(mktime(0,0,0,$today['mon'],1,$today['year'])); 
 			$nextUpdate = $first_day[0];
 			
-		} 
-		
-		$new_settings = array(
-		'Candle' => $options['CandleDefault'],
-		'Havdala' => $options['HavdalaDefault'],
+		} 	
+	
+	$new_settings = array(
+		'Candle' => $options['Candle'],
+		'Havdala' => $options['Havdala'],
 		'updatestatus' => $updatestatus,
 		'lastUpdate' => $nextUpdate,
-		);
+	);
 		
-		update_option('wp_shabbat_settings', $new_settings);
+	update_option('wp_shabbat_settings', $new_settings);
 		
 }
 ?>

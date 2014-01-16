@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: wp-shabbat v0.01\n"
+"Project-Id-Version: wp-shabbat v0.05\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2013-11-18 05:54:18+0000\n"
+"PO-Revision-Date: 2014-01-02 06:07:07+0000\n"
 "Last-Translator: admin <drmosko@dossihost.net>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -33,33 +33,17 @@ msgstr ""
 msgid "www.dossihost.net"
 msgstr ""
 
-#. translators: plugin header field 'Version'
-#: wp-shabbat.php:0
-#@ WP-Shabbat
-msgid "0.01"
-msgstr ""
-
-#: wp-shabbat.php:29
-#@ WP-Shabbat
-msgid "WP-Shabbat is wordpress plugin to close a website in shabbat and holidays,"
-msgstr "תוסף וורדפרס שסוגר אתר אינטרנט בשבתות ובחגים"
-
 #: wp-shabbat.php:94
 #@ default
 msgid "Save Changes"
 msgstr ""
 
-#: wp-shabbat.php:106
-#@ WP-Shabbat
-msgid "Want to keep this plugin free, please make a donation"
-msgstr "עזור לנו להשאיר את הפלאגין בחינם"
-
-#: wp-shabbat-closed-page.php:9
+#: wp-shabbat-closed-page.php:19
 #@ WP-Shabbat
 msgid "We Dont Work Today"
 msgstr "אנחנו לא עובדים היום"
 
-#: wp-shabbat-closed-page.php:10
+#: wp-shabbat-closed-page.php:20
 #@ WP-Shabbat
 msgid "Today is : "
 msgstr "היום "
@@ -84,16 +68,6 @@ msgstr "בסיס הנתונים התעדכן בתאריך : "
 #@ WP-Shabbat
 msgid "Site closing on Saturday and Holidays by identifying the address of the user IP and close to 40 km"
 msgstr "סגירת אתר בשבת ובחגים על ידי זיהוי כתובת ה-IP של המשתמש וקרוב ל -40 ק\\\"מ"
-
-#: wp-shabbat.php:26
-#@ WP-Shabbat
-msgid "the website will close to user based on his location, when it is shabbat in one country the site will be closed but for the other country where its not shabbat the site is open"
-msgstr "האתר ייסגר למשתמש מבוסס על המיקום שלו, כאשר הוא שבת במדינה אחת יהיה סגור באתר, אך למדינה האחרת שבה לא שבת האתר פתוח"
-
-#: wp-shabbat.php:27
-#@ WP-Shabbat
-msgid "WP-Shabbat correctly using a free database that we update every month , the plugin will download it from our servers automatically every month"
-msgstr "התוסף משתמש במסד נתונים שאנחנו מעדכנים כל חודש ללא תשלום, התוסף יוריד אותו מהשרתים שלנו באופן אוטומטי בכל חודש"
 
 #: wp-shabbat.php:28
 #@ WP-Shabbat
@@ -120,47 +94,47 @@ msgstr "מוצר זה כולל נתונים GeoLite שנוצר על ידי MaxMi
 msgid "(jewish hour is calculated from sunrise to sunset divided by 12)"
 msgstr "(שעה יהודית מחושבת מזריחה לשקיעה לחלק ל -12)"
 
-#: wp-shabbat-closed-page.php:11
+#: wp-shabbat-closed-page.php:21
 #@ WP-Shabbat
 msgid "Please come back "
 msgstr "אנא חזור "
 
-#: wp-shabbat-functions.php:233
-#: wp-shabbat-functions.php:241
-#: wp-shabbat-functions.php:271
-#: wp-shabbat-functions.php:278
-#: wp-shabbat-functions.php:285
+#: wp-shabbat-functions.php:156
+#: wp-shabbat-functions.php:164
+#: wp-shabbat-functions.php:195
+#: wp-shabbat-functions.php:202
+#: wp-shabbat-functions.php:209
 #: wp-shabbat.php:99
 #@ WP-Shabbat
 msgid "Holiday"
 msgstr "חג"
 
-#: wp-shabbat-functions.php:233
-#: wp-shabbat-functions.php:251
-#: wp-shabbat-functions.php:278
-#: wp-shabbat-functions.php:294
+#: wp-shabbat-functions.php:156
+#: wp-shabbat-functions.php:174
+#: wp-shabbat-functions.php:202
+#: wp-shabbat-functions.php:218
 #: wp-shabbat.php:99
 #@ WP-Shabbat
 msgid "tommorow at "
 msgstr "מחר בשעה "
 
-#: wp-shabbat-functions.php:241
-#: wp-shabbat-functions.php:259
-#: wp-shabbat-functions.php:285
-#: wp-shabbat-functions.php:301
+#: wp-shabbat-functions.php:164
+#: wp-shabbat-functions.php:183
+#: wp-shabbat-functions.php:209
+#: wp-shabbat-functions.php:225
 #@ WP-Shabbat
 msgid "at "
 msgstr "בשעה "
 
-#: wp-shabbat-functions.php:251
-#: wp-shabbat-functions.php:259
-#: wp-shabbat-functions.php:294
-#: wp-shabbat-functions.php:301
+#: wp-shabbat-functions.php:174
+#: wp-shabbat-functions.php:183
+#: wp-shabbat-functions.php:218
+#: wp-shabbat-functions.php:225
 #@ WP-Shabbat
 msgid "Shabbat"
 msgstr "שבת"
 
-#: wp-shabbat-functions.php:271
+#: wp-shabbat-functions.php:195
 #@ WP-Shabbat
 msgid "two day at "
 msgstr "מחרתיים בשעה"
@@ -195,4 +169,30 @@ msgstr "איך נראה האתר סגור?"
 #@ WP-Shabbat
 msgid "Test Page"
 msgstr "האתר סגור דף ניסיון"
+
+#. translators: plugin header field 'Version'
+#: wp-shabbat.php:0
+#@ WP-Shabbat
+msgid "0.05"
+msgstr ""
+
+#: wp-shabbat.php:106
+#@ WP-Shabbat
+msgid "5$ for this plugin is not much, pls make a donation"
+msgstr "5$ זה לא  הרבה בשביל הפלאגין הזה, אנא תרום לנו"
+
+#: wp-shabbat.php:26
+#@ WP-Shabbat
+msgid "the website will close to user based on his location, when it is shabbat in user location the site will be closed but for user from other location where its not shabbat the site will be open"
+msgstr "האתר יסגר למשתמש כאשר באזורו שבת, אך למשתמש אחר שבאזורו לא שבת האתר ישאר פתוח"
+
+#: wp-shabbat.php:27
+#@ WP-Shabbat
+msgid "WP-Shabbat correctly using a free database that need to be updated every month , the plugin will download it from our servers automatically every month"
+msgstr "התוסף משתמש בבסיס נתונים שחייב להתעדכן כל חודש, התוסף יבצע זאת אוטומטית כל חודש"
+
+#: wp-shabbat.php:29
+#@ WP-Shabbat
+msgid "WP-Shabbat is wordpress plugin that close website in shabbat and holidays base on user location,"
+msgstr "תוסף זה סוגר את האתר למשתמש שבאזורו שבת או חג - גם יום שני של גלויות"
 

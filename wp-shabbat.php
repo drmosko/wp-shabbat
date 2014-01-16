@@ -3,7 +3,7 @@
 Plugin Name: wp-shabbat
 Plugin URI: www.dossihost.net
 Description: Site closing on Saturday and Holidays by identifying the address of the user IP and close to 40 km
-Version: 0.04
+Version: 0.05
 Author: DrMosko
 Author URI: www.dossihost.net
 
@@ -23,10 +23,10 @@ function wp_shabbat_admin_init(){
 }
 function wp_shabbat_main_section() {
 	
-	echo __('the website will close to user based on his location, when it is shabbat in one country the site will be closed but for the other country where its not shabbat the site is open','WP-Shabbat').'<br/>';
-	echo __('WP-Shabbat correctly using a free database that we update every month , the plugin will download it from our servers automatically every month','WP-Shabbat').'<br/>';
+	echo __('the website will close to user based on his location, when it is shabbat in user location the site will be closed but for user from other location where its not shabbat the site will be open','WP-Shabbat').'<br/>';
+	echo __('WP-Shabbat correctly using a free database that need to be updated every month , the plugin will download it from our servers automatically every month','WP-Shabbat').'<br/>';
 	echo __('We recommend that every site owner will consult with a rabbi for the time to close his site','WP-Shabbat').'<br/>';
-	echo '<h3>'.__('WP-Shabbat is wordpress plugin to close a website in shabbat and holidays,','WP-Shabbat').'</h3><br/>';
+	echo '<h3>'.__('WP-Shabbat is wordpress plugin that close website in shabbat and holidays base on user location,','WP-Shabbat').'</h3><br/>';
 
 }
 function wp_shabbat_settings_input_candle() { 
@@ -103,7 +103,7 @@ function wp_shabbat_admin_options() {  // display the admin options page
 	<?php
 		echo '<br/><br/>'.__('Ip DataBase last updated at : ','WP-Shabbat').'<code>'. date('d.m.y',$options['lastUpdate']) .'</code><br/>';
 		echo '<br/><br/>'.__('Update Status : ','WP-Shabbat').'<code>'. $options['updatestatus'] .'</code><br/>';
-		echo '<br/><h2>' . __( 'Want to keep this plugin free, please make a donation','WP-Shabbat' ) . '</h2><br/>';
+		echo '<br/><h2>' . __( '5$ for this plugin is not much, pls make a donation','WP-Shabbat' ) . '</h2><br/>';
 		
 	?>	
 	<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
@@ -136,7 +136,7 @@ add_action( 'get_header', 'wp_shabbat' );
 
 // create default values when user activate plugin
 function wp_shabbat_activate() {
-	
+			
 		delete_option('wp_shabbat_settings');				
 			$settings = array(
 			'CandleDefault' => 20,
@@ -148,13 +148,9 @@ function wp_shabbat_activate() {
 			);
 	
 			add_option('wp_shabbat_settings', $settings);
-	
-	
-	include( plugin_dir_path( __FILE__ ) . 'wp-shabbat-update.php');
-	
 			
-	
-	
+			include( plugin_dir_path( __FILE__ ) . 'wp-shabbat-update.php');
+
 }
 register_activation_hook( __FILE__, 'wp_shabbat_activate' );
 
