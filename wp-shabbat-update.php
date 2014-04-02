@@ -3,11 +3,10 @@
 /***********************
  function to auto update the dat file
  *******************/
-$options = get_option('wp_shabbat_settings');
-
+$options = get_option('wp_shabbat_update_settings');
 
 $nextUpdate = strtotime('+1 month',$options['lastUpdate']) ;
-
+//$nextUpdate = strtotime('+5 min',$options['lastUpdate']) ;
 
 
 $lastfiletime = filectime(plugin_dir_path( __FILE__ ).'/GeoLiteCity.dat');
@@ -55,15 +54,23 @@ if ( $nextUpdate <  current_time(timestamp) ){
 			$nextUpdate = $first_day[0];
 			
 		} 	
-	
-	$new_settings = array(
-		'Candle' => $options['Candle'],
-		'Havdala' => $options['Havdala'],
-		'updatestatus' => $updatestatus,
-		'lastUpdate' => $nextUpdate,
-	);
 		
-	update_option('wp_shabbat_settings', $new_settings);
+	echo $nextUpdate;
+	/*echo 'DEBUG: <pre>';
+	print_r($options);
+	echo '</pre>' ;*/
+	$new_settings = array(
+		'updatestatus' => $updatestatus,
+		'lastUpdate' =>  $nextUpdate,
+		
+		
+	);
+	/*echo 'DEBUG: <pre>';
+	print_r($new_settings);
+	echo '</pre>' ;*/
+	
+		
+	update_option('wp_shabbat_update_settings', $new_settings);
 		
 }
 ?>

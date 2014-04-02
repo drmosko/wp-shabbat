@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: wp-shabbat v0.05\n"
+"Project-Id-Version: wp-shabbat v0.06\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2014-01-02 06:07:07+0000\n"
+"PO-Revision-Date: 2014-04-02 11:07:10+0000\n"
 "Last-Translator: admin <drmosko@dossihost.net>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -33,32 +33,34 @@ msgstr ""
 msgid "www.dossihost.net"
 msgstr ""
 
-#: wp-shabbat.php:94
+#: wp-shabbat.php:105
 #@ default
 msgid "Save Changes"
 msgstr ""
 
 #: wp-shabbat-closed-page.php:19
+#: wp-shabbat-popup.php:25
 #@ WP-Shabbat
 msgid "We Dont Work Today"
 msgstr "אנחנו לא עובדים היום"
 
 #: wp-shabbat-closed-page.php:20
+#: wp-shabbat-popup.php:26
 #@ WP-Shabbat
 msgid "Today is : "
 msgstr "היום "
 
-#: wp-shabbat.php:59
+#: wp-shabbat.php:70
 #@ WP-Shabbat
 msgid "Invalid Candle light time, please enter valid input, default was loaded."
 msgstr "זמן כניסת שבת לא חוקי , אנא הכנס קלט חוקי, ברירת המחדל נטענה."
 
-#: wp-shabbat.php:69
+#: wp-shabbat.php:80
 #@ WP-Shabbat
 msgid "Invalid Havdalah light time, please enter valid input, default was loaded."
 msgstr "זמן הבדלה לא חוקי, אנא הכנס קלט חוקי, ברירת המחדל נטענה."
 
-#: wp-shabbat.php:104
+#: wp-shabbat.php:122
 #@ WP-Shabbat
 msgid "Ip DataBase last updated at : "
 msgstr "בסיס הנתונים התעדכן בתאריך : "
@@ -74,82 +76,101 @@ msgstr "סגירת אתר בשבת ובחגים על ידי זיהוי כתוב�
 msgid "We recommend that every site owner will consult with a rabbi for the time to close his site"
 msgstr "אנו ממליצים לכל בעל אתר להתייעץ עם רב לגבי זמן סגירת האתר שלו"
 
-#: wp-shabbat.php:21
+#: wp-shabbat.php:22
 #@ WP-Shabbat
 msgid "Candle light Minutes"
 msgstr "זמן כניסת שבת"
 
-#: wp-shabbat.php:22
+#: wp-shabbat.php:23
 #@ WP-Shabbat
 msgid "Havdala Minutes"
 msgstr "זמן הבדלה"
 
-#: wp-shabbat.php:118
+#: wp-shabbat.php:136
 #@ WP-Shabbat
 msgid "This product includes GeoLite data created by MaxMind, available from"
 msgstr "מוצר זה כולל נתונים GeoLite שנוצר על ידי MaxMind, זמינים מ"
 
-#: wp-shabbat.php:42
+#: wp-shabbat.php:46
 #@ WP-Shabbat
 msgid "(jewish hour is calculated from sunrise to sunset divided by 12)"
 msgstr "(שעה יהודית מחושבת מזריחה לשקיעה לחלק ל -12)"
 
 #: wp-shabbat-closed-page.php:21
+#: wp-shabbat-popup.php:27
 #@ WP-Shabbat
 msgid "Please come back "
 msgstr "אנא חזור "
 
-#: wp-shabbat-functions.php:156
-#: wp-shabbat-functions.php:164
-#: wp-shabbat-functions.php:195
-#: wp-shabbat-functions.php:202
-#: wp-shabbat-functions.php:209
-#: wp-shabbat.php:99
+#: wp-shabbat-functions.php:180
+#: wp-shabbat-functions.php:185
+#: wp-shabbat-functions.php:194
+#: wp-shabbat-functions.php:199
+#: wp-shabbat-functions.php:241
+#: wp-shabbat-functions.php:246
+#: wp-shabbat-functions.php:253
+#: wp-shabbat-functions.php:258
+#: wp-shabbat-functions.php:266
+#: wp-shabbat-functions.php:271
+#: wp-shabbat.php:110
 #@ WP-Shabbat
 msgid "Holiday"
 msgstr "חג"
 
-#: wp-shabbat-functions.php:156
-#: wp-shabbat-functions.php:174
-#: wp-shabbat-functions.php:202
-#: wp-shabbat-functions.php:218
-#: wp-shabbat.php:99
+#: wp-shabbat-functions.php:181
+#: wp-shabbat-functions.php:185
+#: wp-shabbat-functions.php:211
+#: wp-shabbat-functions.php:215
+#: wp-shabbat-functions.php:254
+#: wp-shabbat-functions.php:258
+#: wp-shabbat-functions.php:282
+#: wp-shabbat-functions.php:286
+#: wp-shabbat.php:110
 #@ WP-Shabbat
 msgid "tommorow at "
 msgstr "מחר בשעה "
 
-#: wp-shabbat-functions.php:164
-#: wp-shabbat-functions.php:183
-#: wp-shabbat-functions.php:209
-#: wp-shabbat-functions.php:225
+#: wp-shabbat-functions.php:195
+#: wp-shabbat-functions.php:199
+#: wp-shabbat-functions.php:224
+#: wp-shabbat-functions.php:228
+#: wp-shabbat-functions.php:267
+#: wp-shabbat-functions.php:271
+#: wp-shabbat-functions.php:295
+#: wp-shabbat-functions.php:299
 #@ WP-Shabbat
 msgid "at "
 msgstr "בשעה "
 
-#: wp-shabbat-functions.php:174
-#: wp-shabbat-functions.php:183
-#: wp-shabbat-functions.php:218
-#: wp-shabbat-functions.php:225
+#: wp-shabbat-functions.php:210
+#: wp-shabbat-functions.php:215
+#: wp-shabbat-functions.php:223
+#: wp-shabbat-functions.php:228
+#: wp-shabbat-functions.php:281
+#: wp-shabbat-functions.php:286
+#: wp-shabbat-functions.php:294
+#: wp-shabbat-functions.php:299
 #@ WP-Shabbat
 msgid "Shabbat"
 msgstr "שבת"
 
-#: wp-shabbat-functions.php:195
+#: wp-shabbat-functions.php:242
+#: wp-shabbat-functions.php:246
 #@ WP-Shabbat
 msgid "two day at "
 msgstr "מחרתיים בשעה"
 
-#: wp-shabbat.php:105
+#: wp-shabbat.php:123
 #@ WP-Shabbat
 msgid "Update Status : "
 msgstr "מצב העדכון : "
 
-#: wp-shabbat.php:34
+#: wp-shabbat.php:41
 #@ WP-Shabbat
 msgid "insert minutes for candle light time, number of minutes before sunset minimum - 20 min ,max - 600 min."
 msgstr "הכנס דקות לזמן כניסת שבת, מספר דקות לפני שקיעה מינימלי - 20 דקות, מקסימום - 600 דקות."
 
-#: wp-shabbat.php:42
+#: wp-shabbat.php:46
 #@ WP-Shabbat
 msgid "insert minutes for havdala time, number of jewish minutes after sunset minimum - 18 min ,max - 72 min."
 msgstr "הכנס דקות לזמן הבדלה, מספר דקות לאחר שקיעה מינימלי - 18 דקות, מקסימום - 72 דקות.\n"
@@ -160,23 +181,17 @@ msgstr "הכנס דקות לזמן הבדלה, מספר דקות לאחר שקי
 msgid "DrMosko"
 msgstr ""
 
-#: wp-shabbat.php:98
+#: wp-shabbat.php:109
 #@ WP-Shabbat
 msgid "How closed page look like?"
 msgstr "איך נראה האתר סגור?"
 
-#: wp-shabbat.php:99
+#: wp-shabbat.php:110
 #@ WP-Shabbat
 msgid "Test Page"
 msgstr "האתר סגור דף ניסיון"
 
-#. translators: plugin header field 'Version'
-#: wp-shabbat.php:0
-#@ WP-Shabbat
-msgid "0.05"
-msgstr ""
-
-#: wp-shabbat.php:106
+#: wp-shabbat.php:124
 #@ WP-Shabbat
 msgid "5$ for this plugin is not much, pls make a donation"
 msgstr "5$ זה לא  הרבה בשביל הפלאגין הזה, אנא תרום לנו"
@@ -195,4 +210,35 @@ msgstr "התוסף משתמש בבסיס נתונים שחייב להתעדכן 
 #@ WP-Shabbat
 msgid "WP-Shabbat is wordpress plugin that close website in shabbat and holidays base on user location,"
 msgstr "תוסף זה סוגר את האתר למשתמש שבאזורו שבת או חג - גם יום שני של גלויות"
+
+#: wp-shabbat.php:100
+#@ WP-Shabbat
+msgid "WP-Shabbat Plugin is Working"
+msgstr "WP-Shabbat עובד"
+
+#: wp-shabbat.php:20
+#@ WP-Shabbat
+msgid "WP Shabbat Plugin Settings"
+msgstr "עמוד הגדרות"
+
+#: wp-shabbat-popup.php:32
+#@ WP-Shabbat
+msgid "Close Window "
+msgstr "סגור חלון"
+
+#. translators: plugin header field 'Version'
+#: wp-shabbat.php:0
+#@ WP-Shabbat
+msgid "0.06"
+msgstr ""
+
+#: wp-shabbat.php:21
+#@ WP-Shabbat
+msgid "Display announcement message"
+msgstr "הצג הודעה בלבד"
+
+#: wp-shabbat.php:34
+#@ WP-Shabbat
+msgid "click to display popup message and not close the site"
+msgstr "סמן להצגת חלונית הודעה ולא לסגור את האתר"
 

@@ -143,9 +143,32 @@ $hebrewDate = iconv ('WINDOWS-1255', 'UTF-8', $hebrewDate); // convert to utf-8
 **********************/
 $redirect = site_url().'/?WP-Shabbat=Shabbat-Closed-Page&redirectReason='; //redirect uri
 $enterTime = candleTime($user_time,$user_timezone_offset,$record);
+global $exitTime;
+global $dayDetails; // day details for announcement popup
+global $dayTimeComeBack; // day details for announcement popup
 $exitTime = havdala($user_time,$user_timezone_offset,$record);
 
 
+$options = get_option('wp_shabbat_settings');
+
+
+ /* shabbat test
+
+
+if ( 1 == 1  ){ 
+					
+		if ( $options['announcement'] == 1  ){ // check if announcement active
+			$dayDetails = __('Holiday','WP-Shabbat');
+			$dayTimeComeBack = __('tommorow at ','WP-Shabbat');
+			include( plugin_dir_path( __FILE__ ) . 'wp-shabbat-popup.php'); // add the popup page
+			
+		}else{
+			header('Location: '. $redirect .__('Holiday','WP-Shabbat').'&opentime='.__('tommorow at ','WP-Shabbat').date('H:i',$exitTime));    // redirect to url
+		//echo 'israel eveHoliday<br/>';
+	}
+					 
+}		
+*/
 
 
     if ($record->country_code3 == 'ISR' )  // if the user from israel
@@ -153,17 +176,29 @@ $exitTime = havdala($user_time,$user_timezone_offset,$record);
 		if ( !is_null(isHoliday()) ) {
 			if (isHoliday() == 'eveHoliday') {
 				if ( $user_time > $enterTime  ){ // check time
-					header('Location: '. $redirect .__('Holiday','WP-Shabbat').'&opentime='.__('tommorow at ','WP-Shabbat').date('H:i',$exitTime));    // redirect to url
-					//echo 'israel eveHoliday<br/>';
-					 
-					 
-				}		
+					if ( $options['announcement'] == 1  ){ // check if announcement active
+						$dayDetails = __('Holiday','WP-Shabbat');
+						$dayTimeComeBack = __('tommorow at ','WP-Shabbat');
+						include( plugin_dir_path( __FILE__ ) . 'wp-shabbat-popup.php'); // add the popup page
+						
+					}else{
+						header('Location: '. $redirect .__('Holiday','WP-Shabbat').'&opentime='.__('tommorow at ','WP-Shabbat').date('H:i',$exitTime));    // redirect to url
+						//echo 'israel eveHoliday<br/>';
+						}
+					}
 			}
+		
 			if (isHoliday() == 'first') {
 				if ( $user_time < $exitTime  ){ // check time
-					header('Location: '. $redirect .__('Holiday','WP-Shabbat').'&opentime='.__('at ','WP-Shabbat').date('H:i',$exitTime));    // redirect to url
-					//echo 'israel first<br/>';
-					
+					if ( $options['announcement'] == 1  ){ // check if announcement active
+						$dayDetails = __('Holiday','WP-Shabbat');
+						$dayTimeComeBack = __('at ','WP-Shabbat');
+						include( plugin_dir_path( __FILE__ ) . 'wp-shabbat-popup.php'); // add the popup page
+						
+					}else{
+						header('Location: '. $redirect .__('Holiday','WP-Shabbat').'&opentime='.__('at ','WP-Shabbat').date('H:i',$exitTime));    // redirect to url
+						//echo 'israel first<br/>';
+					}
 				}		
 			}
 			
@@ -171,17 +206,27 @@ $exitTime = havdala($user_time,$user_timezone_offset,$record);
 		else { // check shabas
 			if ($user_localday == 'Fri') {
 				if ( $user_time > $enterTime ){ // check time
-					header('Location: '. $redirect .__('Shabbat','WP-Shabbat').'&opentime='.__('tommorow at ','WP-Shabbat').date('H:i',$exitTime));    // redirect to url
-					
-					
-					
+					if ( $options['announcement'] == 1  ){ // check if announcement active
+						$dayDetails = __('Shabbat','WP-Shabbat');
+						$dayTimeComeBack = __('tommorow at ','WP-Shabbat');
+						include( plugin_dir_path( __FILE__ ) . 'wp-shabbat-popup.php'); // add the popup page
+						
+					}else{
+						header('Location: '. $redirect .__('Shabbat','WP-Shabbat').'&opentime='.__('tommorow at ','WP-Shabbat').date('H:i',$exitTime));    // redirect to url
+					}
 					
 				}		
 			}
 			if ($user_localday == 'Sat') {
 				if ( $user_time < $exitTime ){ // check time
-					header('Location: '. $redirect .__('Shabbat','WP-Shabbat').'&opentime='.__('at ','WP-Shabbat').date('H:i',$exitTime));    // redirect to url
-					
+					if ( $options['announcement'] == 1  ){ // check if announcement active
+						$dayDetails = __('Shabbat','WP-Shabbat');
+						$dayTimeComeBack = __('at ','WP-Shabbat');
+						include( plugin_dir_path( __FILE__ ) . 'wp-shabbat-popup.php'); // add the popup page
+						
+					}else{
+						header('Location: '. $redirect .__('Shabbat','WP-Shabbat').'&opentime='.__('at ','WP-Shabbat').date('H:i',$exitTime));    // redirect to url
+					}
 					
 				}	
 			}
@@ -192,38 +237,67 @@ $exitTime = havdala($user_time,$user_timezone_offset,$record);
 	if ( !is_null(isHoliday()) ) {
 			if (isHoliday() == 'eveHoliday') {
 				if ($user_time > $enterTime){ // check time
+					if ( $options['announcement'] == 1  ){ // check if announcement active
+							$dayDetails = __('Holiday','WP-Shabbat');
+							$dayTimeComeBack = __('two day at ','WP-Shabbat');
+							include( plugin_dir_path( __FILE__ ) . 'wp-shabbat-popup.php'); // add the popup page
+							
+					}else{
 					header('Location: '. $redirect .__('Holiday','WP-Shabbat').'&opentime='.__('two day at ','WP-Shabbat').date('H:i',$exitTime));    // redirect to url
 					//echo 'eveHoliday<br/>';
-					
+					}
 				}		
 			}
 			if (isHoliday() == 'first') {
-				
-					header('Location: '. $redirect .__('Holiday','WP-Shabbat').'&opentime='.__('tommorow at ','WP-Shabbat').date('H:i',$exitTime));    // redirect to url
-					//echo 'first<br/>';
-					
+					if ( $options['announcement'] == 1  ){ // check if announcement active
+							$dayDetails = __('Holiday','WP-Shabbat');
+							$dayTimeComeBack = __('tommorow at ','WP-Shabbat');
+							include( plugin_dir_path( __FILE__ ) . 'wp-shabbat-popup.php'); // add the popup page
+							
+					}else{
+						header('Location: '. $redirect .__('Holiday','WP-Shabbat').'&opentime='.__('tommorow at ','WP-Shabbat').date('H:i',$exitTime));    // redirect to url
+						//echo 'first<br/>';
+					}
 						
 			}
 			if (isHoliday() == 'second') {
 				if ($user_time < $exitTime){ // check time
+					if ( $options['announcement'] == 1  ){ // check if announcement active
+							$dayDetails = __('Holiday','WP-Shabbat');
+							$dayTimeComeBack = __('at ','WP-Shabbat');
+							include( plugin_dir_path( __FILE__ ) . 'wp-shabbat-popup.php'); // add the popup page
+							
+					}else{
 					header('Location: '. $redirect .__('Holiday','WP-Shabbat').'&opentime='.__('at ','WP-Shabbat').date('H:i',$exitTime));    // redirect to url
 					//echo 'second<br/>';
-					
+					}
 				}		
 			}
 		}
 		else { // check shabas
 			if ($user_localday == 'Fri') {
 				if ($user_time > $enterTime){ // check time
+					if ( $options['announcement'] == 1  ){ // check if announcement active
+							$dayDetails = __('Shabbat','WP-Shabbat');
+							$dayTimeComeBack = __('tommorow at ','WP-Shabbat');
+							include( plugin_dir_path( __FILE__ ) . 'wp-shabbat-popup.php'); // add the popup page
+							
+					}else{
 					header('Location: '. $redirect .__('Shabbat','WP-Shabbat').'&opentime='.__('tommorow at ','WP-Shabbat').date('H:i',$exitTime));    // redirect to url
-					
+					}
 					
 				}		
 			}
 			if ($user_localday == 'Sat') {
 				if ($user_time < $exitTime){ // check time
+					if ( $options['announcement'] == 1  ){ // check if announcement active
+							$dayDetails = __('Shabbat','WP-Shabbat');
+							$dayTimeComeBack = __('at ','WP-Shabbat');
+							include( plugin_dir_path( __FILE__ ) . 'wp-shabbat-popup.php'); // add the popup page
+							
+					}else{
 					header('Location: '. $redirect .__('Shabbat','WP-Shabbat').'&opentime='.__('at ','WP-Shabbat').date('H:i',$exitTime));    // redirect to url
-					
+					}
 					
 				}	
 			}

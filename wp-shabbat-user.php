@@ -62,7 +62,8 @@ function get_client_ip()
     //Get remote IP
 
    
-	$ip = get_client_ip();
+	//$ip = get_client_ip();
+	$ip = '213.151.44.95'; // set israel ip for local use
 	
 	
     //Open GeoIP database and query our IP

@@ -1,13 +1,13 @@
 === WP-Shabbat ===
 Contributors: drmosko
-Tags: shabbat,jewish holiday, close site, 503,
+Tags: shabbat,jewish holiday, close site, 503,popup window,popup message
 Requires at least: 3.7.0
-Tested up to: 3.7.0
-Stable tag: 0.05
+Tested up to: 3.8.1
+Stable tag: 0.06
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Close site on Shabbat and Holidays by identifying the address of the user IP and close to 40 km
+Close site or display popup message on Shabbat and Holidays by identifying the address of the user IP and close to 40 km
 
 
 
@@ -26,6 +26,7 @@ Features include:
 [Answer from Google about WP-Shabbat](https://productforums.google.com/forum/#!topic/webmasters/bjpQtTwzadI/discussion)
 * plugin languages : English,Hebrew.
 * plugin will generate on fly page with your template for visitor to come back later.
+* Display popup message when its shabbat or holiday
 
 Notes:
 
@@ -56,12 +57,15 @@ Notes:
 1. WP-Shabbat Setting Page.
 2. WP-Shabbat on fly page (with Twenty Thirteen template).
 3. Confirm of Http header status 503.
+4. popup announcement messsage.
 
 == Changelog ==
+= 0.06 =
+* fixed critical update problem  
+* added popup message feature
 
 = 0.05 =
-* fixed critical ip DB problem - first time download-disabled
-
+* fixed critical ip DB problem 
 
 = 0.04 =
 * fixed Collision functions
